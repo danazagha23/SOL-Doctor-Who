@@ -91,6 +91,13 @@ ON DELETE CASCADE
 
 ALTER TABLE [dbo].[tblEpisodeCompanion] CHECK CONSTRAINT [FK_tblEpisodeCompanion_tblCompanion]
 
+ALTER TABLE [dbo].[tblEpisodeCompanion]  WITH CHECK ADD  CONSTRAINT [FK_tblEpisodeCompanion_tblEpisode] FOREIGN KEY([EpisodeId])
+REFERENCES [dbo].[tblEpisode] ([EpisodeId])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+ALTER TABLE [dbo].[tblEpisodeCompanion] CHECK CONSTRAINT [FK_tblEpisodeCompanion_tblEpisode]
+
 ALTER TABLE [dbo].[tblEpisodeEnemy]  WITH CHECK ADD  CONSTRAINT [FK_tbEpisodeEnemy_tblEnemy] FOREIGN KEY([EnemyId])
 REFERENCES [dbo].[tblEnemy] ([EnemyId])
 ON UPDATE CASCADE
